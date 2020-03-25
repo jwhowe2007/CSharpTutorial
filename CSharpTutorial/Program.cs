@@ -14,7 +14,9 @@ namespace CSharpTutorial
              */
             Console.WriteLine("Hello World!");
 
-            Console.WriteLine("Square of 32: {0}", Basics.Tutorial.Square(32));
+            Console.WriteLine("Square of 8192: {0}", Basics.Tutorial.Square(8192));
+
+            Basics.Tutorial.DataTypes();
         }
     }
 }
