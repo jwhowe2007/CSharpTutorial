@@ -70,14 +70,89 @@ namespace Basics
 
             // Unicode text in source code example:
             Console.OutputEncoding = System.Text.Encoding.UTF8;
+            string unicodeString = "";
 
-            for (int i = 0x0530; i < 0x058F; i++)
+            for (int i = 0x1200; i < 0x1210; i++)
             {
-                char unicodeChar = (char)i;
-                Console.WriteLine("Unicode char U+{0:X}: {1}", i, unicodeChar);
+                unicodeString += (char)i;                
             }
 
-            Console.OutputEncoding = System.Text.Encoding.ASCII;
+            UTF8Encoding sampleUTF8 = new UTF8Encoding();
+            Byte[] encodedString = sampleUTF8.GetBytes(unicodeString);
+
+            Console.WriteLine(sampleUTF8.GetString(encodedString));
+        }
+
+        public void NumbersFun()
+        {
+            NarcisissisticNumbers(3);
+        }
+
+        private void NarcisissisticNumbers(int digits)
+        {
+            for (long testNumsIndex = (int)Math.Pow(10, digits - 1); testNumsIndex < (int)Math.Pow(10, digits); testNumsIndex++)
+            {
+                bool isNarcissisticNumber = IsNarcissisticNumber(testNumsIndex) || digits == 0;
+
+                if(isNarcissisticNumber)
+                {
+                    Console.WriteLine("{0} is a \"Narcissitic\" number.", testNumsIndex);
+                }                
+            }
+        }
+
+        private bool IsNarcissisticNumber(long num)
+        {
+            // Decompose the number into place digits
+            List<int> foobar = DecomposeNumberIntoDigits(num);
+
+            // Get the n-value
+            int n = foobar.Count;
+
+            long total = 0;
+
+            foobar.ForEach(digit =>
+            {
+                total += (long)Math.Pow(digit, n);
+            });
+
+            return total == num;
+        }
+
+        private List<int> DecomposeNumberIntoDigits(long number)
+        {
+            long k = 10;
+            int places = 0;
+            float quotient;
+            List<int> decomposedDigits = new List<int>();
+
+            do
+            {
+                // Get the remainder of number / place                
+                quotient = number / k;
+                k *= 10;
+                places++;
+            } while (quotient >= 1);
+
+            long currentNumber = number;
+
+            for (int i = places - 1; i >= 0; i--)
+            {                
+                /* Decompose the number given by powers of 10, starting with the largest
+                 * available digit and ending at the first digit.
+                 * 
+                 * Example:
+                 * 345 will start at place 2, so divide 345 by 10^2 to get 3.45.
+                 * Now, we take the integer floor to get the digit 3.
+                 * Repeat for the rest of the places (10^1, 10^0)
+                 */
+                int currentDigit = (int)Math.Floor((double)(currentNumber / Math.Pow(10, i)));
+                currentNumber -= (long)currentDigit * (long)Math.Pow(10, i);
+
+                decomposedDigits.Add(currentDigit);
+            }
+
+            return decomposedDigits;
         }
     }
 }
