@@ -17,7 +17,7 @@ namespace CSharpTutorial
             Console.WriteLine("Square of 8192: {0}", Basics.Tutorial.Square(8192));
             Basics.Tutorial tutorial = new Basics.Tutorial();
 
-            Basics.Tutorial.DataTypes();
+            Basics.Tutorial.BasicDataTypes();
             tutorial.NumbersFun();
         }
     }

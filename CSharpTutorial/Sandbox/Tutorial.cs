@@ -18,7 +18,7 @@ namespace Basics
             return x * x;
         }
 
-        public static void DataTypes()
+        public static void BasicDataTypes()
         {
             // Range: -128 <= x <= 127
             sbyte signedInt = 100;
@@ -68,19 +68,22 @@ namespace Basics
             bool conclusion = false;
             Console.WriteLine("Inference rule p => q: ~{0} || {1} === {2}", predicate, conclusion, !predicate || conclusion);
 
-            // Unicode text in source code example:
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            // Unicode text in source code example:            
             string unicodeString = "";
 
-            for (int i = 0x1200; i < 0x1210; i++)
+            for (int i = 0x0100; i < 0x01FF; i++)
             {
-                unicodeString += (char)i;                
+                unicodeString += (char)i;
             }
+            
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.WriteLine(unicodeString);
 
-            UTF8Encoding sampleUTF8 = new UTF8Encoding();
-            Byte[] encodedString = sampleUTF8.GetBytes(unicodeString);
+            DateTime now = DateTime.Now;
+            Console.WriteLine(now.ToString("\nhh:mm, dd MMM yyyy\n"));
 
-            Console.WriteLine(sampleUTF8.GetString(encodedString));
+            // Arrays - useful when you have a set of data that you don't change very often, if at all.
+            int[] intArray = { 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 };
         }
 
         public void NumbersFun()
@@ -94,10 +97,10 @@ namespace Basics
             {
                 bool isNarcissisticNumber = IsNarcissisticNumber(testNumsIndex) || digits == 0;
 
-                if(isNarcissisticNumber)
+                if (isNarcissisticNumber)
                 {
                     Console.WriteLine("{0} is a \"Narcissitic\" number.", testNumsIndex);
-                }                
+                }
             }
         }
 
@@ -137,7 +140,7 @@ namespace Basics
             long currentNumber = number;
 
             for (int i = places - 1; i >= 0; i--)
-            {                
+            {
                 /* Decompose the number given by powers of 10, starting with the largest
                  * available digit and ending at the first digit.
                  * 
