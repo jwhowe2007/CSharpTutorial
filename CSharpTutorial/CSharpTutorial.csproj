@@ -2,14 +2,19 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <StartupObject>CSharpTutorial.Program</StartupObject>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Optimize>false</Optimize>
     <DocumentationFile>C:\Users\piTro\Programming\.NET\CSharpTutorial\CSharpTutorial\CSharpTutorial.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.0" />
