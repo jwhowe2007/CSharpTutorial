@@ -26,7 +26,6 @@ namespace Basics
             // Range: 0 <= x <= 255
             byte color = 0xF0;
 
-
             // Shorts
             // Represented by a 2-byte word (16-bits)
             short shortInt = -32768;
