@@ -1,0 +1,26 @@
+body {
+    width: 100%;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.alert {
+    color: crimson;
+}
+
+.info {
+    color: seagreen;
+}
