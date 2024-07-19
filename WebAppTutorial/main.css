@@ -13,16 +13,21 @@ body {
     flex-direction: column;
 }
 
+.header {
+    flex: 1 0 auto;
+    padding: 1em;
+}
+
 .btn {
     color: var(--btnFontColor);
     background-color: var(--btnBg);
 }
 
 #themeSwitch {
-    position: absolute;
+    position: relative;
+    float: right;
     height: 50px;
     width: 50px;
-    right: 1em;
     border-radius: 50%;
     border: none;
 }
