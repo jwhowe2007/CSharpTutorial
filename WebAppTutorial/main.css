@@ -5,16 +5,27 @@ html {
 }
 
 body {
-    width: 100%;
     font-family: monospace;
     background: var(--bg);
     color: var(--fontColor);
     font-family: helvetica;
+    display: flex;
+    flex-direction: column;
 }
 
-/* ul {
-    font-family: helvetica;
-} */
+.btn {
+    color: var(--btnFontColor);
+    background-color: var(--btnBg);
+}
+
+#themeSwitch {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 1em;
+    border-radius: 50%;
+    border: none;
+}
 
 li {
     list-style: circle;
@@ -26,17 +37,17 @@ li {
 
 .light-theme {
     --bg: var(--green);
+    --btnBg: var(--black);
     --fontColor: var(--black);
+    --btnFontColor: var(--white);
 }
 
 .dark-theme {
     --bg: var(--black);
+    --btnBg: var(--white);
     --fontColor: var(--green);
+    --btnFontColor: var(--black);
 }
-
-/* #msg {
-    font-family: monospace;
-} */
 
 footer {
     position: relative;
