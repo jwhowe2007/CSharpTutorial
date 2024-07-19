@@ -1,2 +1,2 @@
 // Main index JS
-alert("JavaScript in use!");
+console.log("JavaScript in use!");
