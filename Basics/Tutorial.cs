@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CSharpTutorial.Basics
 {
@@ -7,7 +8,7 @@ namespace CSharpTutorial.Basics
         private readonly string classVar = newClassVarValue;
 
         public void DisplayClassVar() {
-            Console.WriteLine(this.classVar);
+            Console.WriteLine(classVar);
         }
 
         /// <summary>
@@ -17,7 +18,7 @@ namespace CSharpTutorial.Basics
         /// </summary>
         /// <param name="x">Integer to be squared</param>
         /// <returns>Square of the given number (x^2)</returns>
-        public static Int64 Square(Int64 x)
+        public static long Square(long x)
         {
             return x * x;
         }
@@ -86,7 +87,8 @@ namespace CSharpTutorial.Basics
             Console.WriteLine(now.ToString("\nHH:mm:ss, dd MMM yyyy\n"));
 
             // Arrays - useful when you have a set of data that you don't change very often, if at all.
-            int[] intArray = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55];
+            object[] intArray = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55];
+            Tools.CollectionTools.DisplayArray(intArray);
         }
 
         public static void NarcisissisticNumbers(int digits) {

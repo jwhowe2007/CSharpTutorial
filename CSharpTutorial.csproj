@@ -9,7 +9,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Optimize>false</Optimize>
-    <DocumentationFile>C:\Users\piTro\Programming\.NET\CSharpTutorial\CSharpTutorial\CSharpTutorial.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\piTro\Programming\.NET\CSharpTutorial\CSharpTutorial.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,5 +19,4 @@
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.0" />
   </ItemGroup>
-
 </Project>
